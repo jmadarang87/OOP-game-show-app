@@ -5,7 +5,7 @@
  class Game {
      missed = 0;
      phrases = this.createPhrases();
-     activePhrase = null;
+     activePhrase = this.getRandomQuote();
      
      createPhrases() {
         let phraseArray = [];
@@ -15,5 +15,10 @@
         phraseArray.push(new Phrase('Kindness is in our power, even when fondness is not.'));
         phraseArray.push(new Phrase('If you want to change the world, go home and love your family.'));
         return phraseArray;
+     }
+
+     getRandomQuote() {
+        let randomNumber = Math.floor(Math.random() * (this.phrases.length));
+        return this.phrases[randomNumber];
      }
  }
