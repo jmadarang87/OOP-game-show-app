@@ -7,3 +7,4 @@
  const game = new Game();
 
  console.log(phrase);
+ console.log(game.phrases);
