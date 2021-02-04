@@ -28,7 +28,10 @@
         if (phraseLetters.includes(letter)) {
            this.showMatchedLetter(letter);
         } else {
-           console.log(false)};
+           console.log(false);
+           game.removeLife();
+        };
+
     };
 
     showMatchedLetter(letter) {

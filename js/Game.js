@@ -3,6 +3,8 @@
  * Game.js */
 
  const overlay = document.getElementById('overlay');
+ const scoreBoard = document.getElementById('scoreboard');
+
 
  class Game {
      missed = 0;
@@ -29,10 +31,11 @@
       overlay.style.display = 'none';
       this.getRandomPhrase();
       this.activePhrase.addPhraseToDisplay();
+     }
 
-
-     
-      
-      
+     removeLife() {
+      console.log('life lost');
+      let li = scoreBoard.firstElementChild.children;
+      li[0].remove();
      }
  }
