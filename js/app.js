@@ -3,12 +3,23 @@
  * app.js */
 
 
- const phrase = new Phrase('i LOVE DAKOTA!!');
- const game = new Game();
+const game = new Game();
+game.startGame();
+console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
- console.log(phrase);
- game.phrases.forEach((phrase, index) => {
-    console.log(`Phrase ${index + 1} - phrase: ${phrase.phrase}`);
- })
+// const startGame = document.getElementById('btn__reset');
 
- console.log(game.activePhrase);
+// startGame.addEventListener( "click", () => {
+//    const overlay = document.getElementById('overlay');
+//    overlay.style.display = 'none';
+//    });
+
+//  const randomPhrase = game.getRandomPhrase();
+//  const phrase = new Phrase(randomPhrase.phrase);
+
+
+
+//  console.log(phrase);
+//  game.phrases.forEach((phrase, index) => {
+//     console.log(`Phrase ${index + 1} - phrase: ${phrase.phrase}`);
+//  });
