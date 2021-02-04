@@ -22,4 +22,21 @@
         ul.innerHTML = stringHTML.join("");
         phraseSection.appendChild(ul);
     }
- }
+
+    checkLetter(letter) {
+        const phraseLetters = game.activePhrase.phrase.split('');
+        if (phraseLetters.includes(letter)) {
+           this.showMatchedLetter(letter);
+        } else {
+           console.log(false)};
+    };
+
+    showMatchedLetter(letter) {
+        let lettersList = document.getElementsByTagName('li');
+        for (let i = 0 ; i < lettersList.length; i++ ) {
+            if ( lettersList[i].innerHTML === letter) {
+                lettersList[i].className = 'show letter ${letter}';
+            }
+        }
+    };
+ };

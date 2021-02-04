@@ -30,5 +30,9 @@
       this.getRandomPhrase();
       this.activePhrase.addPhraseToDisplay();
 
+
+     
+      
+      
      }
  }
