@@ -37,5 +37,19 @@
       console.log('life lost');
       let li = scoreBoard.firstElementChild.children;
       li[0].remove();
+      this.missed++;
+      console.log(`${this.missed}`);
+      if (this.missed === 5) {
+         console.log(`You Lost!`);
+         this.gameOver();
+      }
+     }
+
+     checkForWin() {
+      
+     }
+
+     gameOver() {
+        alert(`You lost!!!!!!`);
      }
  }
