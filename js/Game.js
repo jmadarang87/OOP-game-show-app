@@ -4,7 +4,7 @@
 
  const overlay = document.getElementById('overlay');
  const scoreBoard = document.getElementById('scoreboard');
-
+ let hide = document.getElementsByClassName('hide');
 
  class Game {
      missed = 0;
@@ -40,16 +40,17 @@
       this.missed++;
       console.log(`${this.missed}`);
       if (this.missed === 5) {
-         console.log(`You Lost!`);
          this.gameOver();
       }
      }
 
      checkForWin() {
-      
+      if (hide.length === 0) {
+         alert(`YOU WIN!!!!!!`);
+      }
      }
 
      gameOver() {
-        alert(`You lost!!!!!!`);
+        alert(`YOU LOSE!!!!!!`);
      }
  }

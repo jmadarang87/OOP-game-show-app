@@ -27,11 +27,11 @@
         const phraseLetters = game.activePhrase.phrase.split('');
         if (phraseLetters.includes(letter)) {
            this.showMatchedLetter(letter);
+           game.checkForWin();
         } else {
-           console.log(false);
            game.removeLife();
-        };
-
+           game.checkForWin();
+        }
     };
 
     showMatchedLetter(letter) {
