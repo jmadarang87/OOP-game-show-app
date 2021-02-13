@@ -27,10 +27,9 @@
         const phraseLetters = game.activePhrase.phrase.split('');
         if (phraseLetters.includes(letter)) {
            this.showMatchedLetter(letter);
-           game.checkForWin();
+           return true;
         } else {
-           game.removeLife();
-           game.checkForWin();
+           return false;
         }
     };
 
@@ -41,5 +40,6 @@
                 lettersList[i].className = 'show letter ${letter}';
             }
         }
+
     };
  };

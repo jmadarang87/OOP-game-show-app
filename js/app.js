@@ -5,7 +5,6 @@
 
 const game = new Game();
 
-
 const startGame = document.getElementById('btn__reset');
 
 startGame.addEventListener( 'click', () => {
@@ -16,6 +15,5 @@ startGame.addEventListener( 'click', () => {
 
 const qwerty = document.getElementById('qwerty');
 qwerty.addEventListener('click', (event) => {
-   const letter = event.target.textContent;
-   game.activePhrase.checkLetter(letter);
+   game.handleInteraction(event);
 })

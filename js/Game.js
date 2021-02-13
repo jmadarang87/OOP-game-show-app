@@ -9,15 +9,15 @@
  class Game {
      missed = 0;
      phrases = this.createPhrases();
-     activePhrase = this.getRandomPhrase();
+     activePhrase = null;
      
      createPhrases() {
         let phraseArray = [];
-        phraseArray.push(new Phrase('Give others the best of you not the stressed of you'));
-        phraseArray.push(new Phrase('In each of us there is a little of all of us'));
-        phraseArray.push(new Phrase('Be kind for everyone you meet is fighting a hard battle'));
-        phraseArray.push(new Phrase('Kindness is in our power even when fondness is not'));
-        phraseArray.push(new Phrase('If you want to change the world go home and love your family'));
+        phraseArray.push(new Phrase('Minnesota'));
+        phraseArray.push(new Phrase('Oregon'));
+        phraseArray.push(new Phrase('California'));
+        phraseArray.push(new Phrase('Colorado'));
+        phraseArray.push(new Phrase('Colombia'));
         return phraseArray;
      }
 
@@ -30,15 +30,17 @@
       const overlay = document.getElementById('overlay');
       overlay.style.display = 'none';
       this.getRandomPhrase();
+      this.activePhrase = this.getRandomPhrase();
       this.activePhrase.addPhraseToDisplay();
      }
 
      removeLife() {
       console.log('life lost');
       let li = scoreBoard.firstElementChild.children;
-      li[0].remove();
+      let heartIndex = parseInt(this.missed);
+      console.log(li);
+      li[heartIndex].innerHTML = `<img src="images/lostheart.png" alt="Lost Heart Icon" height="35" width="30">`;
       this.missed++;
-      console.log(`${this.missed}`);
       if (this.missed === 5) {
          this.gameOver();
       }
@@ -46,11 +48,24 @@
 
      checkForWin() {
       if (hide.length === 0) {
-         alert(`YOU WIN!!!!!!`);
+         console.log(`YOU WIN!!!!!!`);
       }
      }
 
      gameOver() {
         alert(`YOU LOSE!!!!!!`);
      }
+
+     handleInteraction(event) {
+      const letter = event.target.textContent;
+      event.target.disabled = true;
+      if (game.activePhrase.checkLetter(letter)) {
+
+         game.checkForWin();
+         } else {
+         event.target.className = "wrong";
+         game.removeLife();
+         }
+     }
+
  }
