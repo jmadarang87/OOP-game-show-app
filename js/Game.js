@@ -60,7 +60,7 @@
       const letter = event.target.textContent;
       event.target.disabled = true;
       if (game.activePhrase.checkLetter(letter)) {
-
+         event.target.className = "chosen";
          game.checkForWin();
          } else {
          event.target.className = "wrong";
