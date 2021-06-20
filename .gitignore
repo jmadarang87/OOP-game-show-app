@@ -105,3 +105,4 @@ dist
 
 # Local Port
 .vscode
+.DS_Store
