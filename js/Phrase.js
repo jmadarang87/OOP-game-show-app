@@ -1,14 +1,11 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Phrase.js */
+let phraseSection = document.getElementById('phrase');
 
- let phraseSection = document.getElementById('phrase');
-
- class Phrase {
+class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
 
+    // adds hidden letters to phrase section for select phrase
     addPhraseToDisplay() {
         let string = this.phrase.split('');
         let stringHTML = string.map( letter => {
@@ -18,21 +15,22 @@
                 return `<li class="space"> </li>`;
             }
         })
-        let ul = document.createElement('ul');
+        let ul = document.getElementById("phrase");
         ul.innerHTML = stringHTML.join("");
-        phraseSection.appendChild(ul);
     }
 
+    // checks if letter selected is in phrase
     checkLetter(letter) {
         const phraseLetters = game.activePhrase.phrase.split('');
         if (phraseLetters.includes(letter)) {
-           this.showMatchedLetter(letter);
-           return true;
+            this.showMatchedLetter(letter);
+            return true;
         } else {
-           return false;
+            return false;
         }
-    };
+    }
 
+    // if letter is in secret word, make visible
     showMatchedLetter(letter) {
         let lettersList = document.getElementsByTagName('li');
         for (let i = 0 ; i < lettersList.length; i++ ) {
@@ -40,6 +38,5 @@
                 lettersList[i].className = 'show letter ${letter}';
             }
         }
-
-    };
- };
+    }
+};
