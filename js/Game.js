@@ -72,7 +72,7 @@ class Game {
    removeLife() {
       let li = scoreBoard.firstElementChild.children;
       let heartIndex = parseInt(this.missed);
-      li[heartIndex].innerHTML = `<img src="images/lostheart.png" alt="Lost Heart Icon" height="35" width="30">`;
+      li[heartIndex].innerHTML = `<img src="images/lostHeart.png" alt="Lost Heart Icon" height="35" width="30">`;
       this.missed++;
       if (this.missed === lives) {
          this.gameOver();
